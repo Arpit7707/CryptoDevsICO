@@ -223,20 +223,20 @@ export default function Home() {
       return <button className={styles.button}>Loading...</button>;
     }
 
-    // if (tokensToBeClaimed) {
-    //   return (
-    //     <div>
-    //       <div className={styles.description}>
-    //         {/* multiplying 10 with amount of token to be claimed because per nft user can mint 10 tokens (according to policy) */}
-    //         {tokensToBeClaimed * 10} Token can be claimed!
-    //       </div>
-    //       <button className={styles.button} onClick={claimCryptoDevTokens}>
-    //         Claim Tokens
-    //       </button>
-    //     </div>
-    //   );
-    // }
-    // If user doesnt have any tokens to claim, show the mint button
+    if (tokensToBeClaimed) {
+      return (
+        <div>
+          <div className={styles.description}>
+            {/* multiplying 10 with amount of token to be claimed because per nft user can mint 10 tokens (according to policy) */}
+            {tokensToBeClaimed * 10} Token can be claimed!
+          </div>
+          <button className={styles.button} onClick={claimCryptoDevTokens}>
+            Claim Tokens
+          </button>
+        </div>
+      );
+    }
+    //If user doesnt have any tokens to claim, show the mint button
     return (
       <div style={{ display: "flex-col" }}>
         <div>
